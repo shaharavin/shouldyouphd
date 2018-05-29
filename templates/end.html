@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}Should you do a PhD?{% endblock %}
+
+{% block css %}
+<style type="text/css">
+	.panel {
+		background-color: rgba(255,255,255,0.95);
+	}
+	body {
+		background-image: url('/static/images/nopanic.jpg');
+		background-size: 50%;
+	}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="panel panel-success">
+	<div class="panel-heading">
+		<h2>You should do a PhD!</h2>
+	</div>
+	<div class="panel-body">
+		<p class="lead">
+			Seems like you have it all sorted out. Good luck!</p>
+		<p>Here are some other resources you might want to consult:
+			<ul>
+				<li><a href="http://phdcomics.com">PHD Comics</a></li>
+				<li><a href="https://www.google.com/?q=should+you+do+a+phd">The Internet</a></li>
+			</ul>
+		</p>
+		<p class="small">Have some comments or ideas for improvement? <a href="mailto:shahar.avin@gmail.com">Drop me a line</a>.</p>
+	</div>
+</div>
+
+{% endblock %}

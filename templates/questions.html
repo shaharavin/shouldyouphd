@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}Some questions about your PhD{% endblock %}
+
+{% block css %}
+<style type="text/css">
+	.panel {
+		background-color: rgba(255,255,255,0.98);
+	}
+	body {
+		background-image: url('/static/images/panic_{{page}}.jpg');
+		background-size: 50%;
+	}
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div class="progress">
+  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{page}}" aria-valuemin="0" aria-valuemax="{{NUM_PAGES}}" style="width: {% widthratio 100 NUM_PAGES page %}%;">
+    {{page}} / {{NUM_PAGES}}
+  </div>
+</div>
+
+<form role="form" class="panel panel-default" method="post">
+	{% csrf_token %}
+	<div class="panel-body">
+	{% if form.errors %}
+	<div class="alert alert-danger" role="alert">You should NOT do a PhD.</div>
+	{% endif %}
+	{% for field in form %}
+	<div class="form-group">
+		{{field.label_tag}} {{field}}
+	</div>
+	{% endfor %}
+	<button type="submit" class="btn btn-success">Check</button>
+	</div>
+</form>
+
+{% endblock %}

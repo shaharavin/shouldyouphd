@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Should you do a PhD?{% endblock %}
+
+{% block css %}
+<style type="text/css">
+	.jumbotron {
+		background-color: rgba(255,255,255,0.95);
+	}
+	.jumbotron p.lead + p{
+		text-align: center;
+	}
+	body {
+		background-image: url('/static/images/panic.jpg');
+		background-size: 50%;
+	}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="jumbotron">
+	<h1>Should you do a PhD?</h1>
+	<p class="lead">
+		Choosing to embark on the journey to complete a doctoral thesis can be daunting.<br/> 
+		This quick survey will tell you whether you are likely to have an overall positive experience.</p>
+	<p>
+		<a class="btn btn-lg btn-success" href="/topic/" role="button">Let's find out!</a>
+	</p>
+</div>
+
+{% endblock %}
